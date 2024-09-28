@@ -1,10 +1,151 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Arya Nugraha</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Nugraha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-color: #ff9a9e;
+            }
+            25% {
+                background-color: #fad0c4;
+            }
+            50% {
+                background-color: #fbc2eb;
+            }
+            75% {
+                background-color: #a18cd1;
+            }
+            100% {
+                background-color: #fcb69f;
+            }
+        }
+
+        .profile-container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        .profile-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+        }
+
+        .description-box {
+            margin-top: 20px;
+        }
+
+        .description-box h2 {
+            margin-bottom: 10px;
+            font-size: 22px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .description-box p {
+            font-size: 14px;
+            color: #555;
+            font-weight: 1000;
+        }
+
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-media img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.2s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        div {
+
+            animation: backgroundAnimation 10s infinite;
+        }
+    </style>
 </head>
 <body>
-    <h1>Arya Nugraha</h1>
-    <p>1202220125</p>
-    <p>S1 Sistem Informasi</p>
+    <div class="profile-container">
+        <img src="Foto_Arya Nugraha.jpg" alt="Profile Picture">
+        <div class="description-box">
+            <h2>Arya Nugraha</h2>
+            <p>1202220125</p>
+            <p>S1 Sistem Informasi</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/arya_ngrhaa/" target="_blank">
+                <img src="instagram.jpeg" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/aryangrh/" target="_blank">
+                <img src="linkedin.png" alt="linkedin">
+            </a>
+            <a href="https://github.com/aryanugraha04" target="_blank">
+                <img src="github.png" alt="github">
+            </a>
+        </div>
+    </div>
+
+    <div class="clock-container" id="date-time"></div>
+    <script>
+        // Function to display current date and time
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('date-time');
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString(undefined, options);
+            dateTimeElement.textContent = `${dateString}, ${timeString}`;
+        }
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
